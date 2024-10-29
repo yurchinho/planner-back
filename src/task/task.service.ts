@@ -14,7 +14,10 @@ export class TaskService {
 	async createTask(taskDto: TaskDto, userId: string) {
 		return this.prisma.task.create({
 			data: {
-				...taskDto,
+				name: taskDto.name,
+				isCompleted: taskDto.isCompleted,
+				createdAt: taskDto.createdAt,
+				priority: taskDto.priority,
 				user: {
 					connect: {
 						id: userId,

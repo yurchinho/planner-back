@@ -10,7 +10,7 @@ export class PomodoroService {
 
 		return await this.prisma.pomodoroSession.findFirst({
 			where: {
-				created_at: {
+				createdAt: {
 					gte: new Date(today),
 				},
 				userId,

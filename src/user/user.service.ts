@@ -47,7 +47,7 @@ export class UserService {
 		const todayTasks = await this.prisma.task.count({
 			where: {
 				userId: id,
-				created_at: {
+				createdAt: {
 					gte: todayStart.toISOString(),
 				},
 			},
@@ -57,7 +57,7 @@ export class UserService {
 		const weekTasks = await this.prisma.task.count({
 			where: {
 				userId: id,
-				created_at: {
+				createdAt: {
 					gte: weekStart.toISOString(),
 				},
 			},
@@ -105,8 +105,8 @@ export class UserService {
 			select: {
 				name: true,
 				email: true,
-				created_at: true,
-				updated_at: true,
+				createdAt: true,
+				updatedAt: true,
 			},
 		});
 	}
